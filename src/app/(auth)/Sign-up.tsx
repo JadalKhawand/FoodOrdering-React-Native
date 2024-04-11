@@ -22,6 +22,7 @@ const SignupPage = () => {
         value={password}
         onChangeText={setPassword}
         style={styles.input}
+        secureTextEntry
       />
       <Button text="Create account" />
       <Link style={styles.textButton} href={"/(auth)/Sign-in"}>

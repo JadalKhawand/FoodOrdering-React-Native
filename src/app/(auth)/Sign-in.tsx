@@ -21,6 +21,7 @@ const SigninPage = () => {
         value={password}
         onChangeText={setPassword}
         style={styles.input}
+        secureTextEntry
       />
       <Button text="Sign in" />
       <Link style={styles.textButton} href={"/(auth)/Sign-up"}>
