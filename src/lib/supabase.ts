@@ -18,7 +18,7 @@ const ExpoSecureStoreAdapter = {
 const supabaseUrl = 'https://ajnhailcerccnthamtcf.supabase.co' || '';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqbmhhaWxjZXJjY250aGFtdGNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI4NjQxMTEsImV4cCI6MjAyODQ0MDExMX0.eS-9aV6pdbT18w6XXet6l6do9CqZuUTJ4076YRDRQ08' || '';
 
-console.log(supabaseUrl, supabaseAnonKey);
+// console.log(supabaseUrl, supabaseAnonKey);
 
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   auth: {
