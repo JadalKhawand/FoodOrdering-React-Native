@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TextInput, Alert, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import Button from "@/components/Button";
-import { Link, Stack } from "expo-router";
+import { Link, Redirect, Stack } from "expo-router";
 import { supabase } from "@/lib/supabase";
 import { MaterialIcons } from "@expo/vector-icons";
 const SignupPage = () => {
@@ -14,7 +14,8 @@ async function signUpWithEmail(){
   setLoading(true);
   const {error} = await supabase.auth.signUp({email,password})
   if(error) Alert.alert(error.message)
-  setLoading(false)
+  setLoading(false);
+  
 }
 
   return (
