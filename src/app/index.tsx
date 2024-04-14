@@ -4,10 +4,10 @@ import Button from "../components/Button";
 import { Link, Redirect } from "expo-router";
 import { useAuth } from "@/providers/AuthProvider";
 import { supabase } from "@/lib/supabase";
-
+import { useNavigation } from "@react-navigation/native";
 const index = () => {
   const {session, loading, isAdmin} = useAuth()
-  
+  const navigation = useNavigation()
   if(loading){
     return <ActivityIndicator />
   }
@@ -16,6 +16,10 @@ const index = () => {
   }
   if(!isAdmin){
     return <Redirect href={'/(user)'}/>
+  }
+
+  function handleSignOut(){
+    supabase.auth.signOut()
   }
 
   return (
@@ -28,7 +32,7 @@ const index = () => {
       </Link>
       
 
-      <Button onPress={() => supabase.auth.signOut()} text="Sign out"></Button>
+      <Button onPress={handleSignOut} text="Sign out"></Button>
     </View>
   );
 };
