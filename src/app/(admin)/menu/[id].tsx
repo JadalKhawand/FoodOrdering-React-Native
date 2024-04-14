@@ -57,7 +57,7 @@ const ProductDetailsScreen = () => {
         }}
       />
 
-      <Stack.Screen options={{ title: "Details" }} />
+      <Stack.Screen options={{ title: product.name }} />
       <Image
         source={{ uri: product.image || defaultPizzaImage }}
         style={styles.image}
